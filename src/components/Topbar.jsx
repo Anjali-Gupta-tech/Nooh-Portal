@@ -58,21 +58,8 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
   return (
     <header className="h-20 bg-white border-b border-gray-200 px-8 flex items-center justify-between shrink-0 sticky top-0 z-30" id="topbar-root">
       
-      {/* Left Area: Burger Menu & Breadcrumbs */}
-      <div className="flex items-center gap-4">
-        <button
-          onClick={onMenuToggle}
-          className="p-1.5 hover:bg-gray-50 text-slate-500 hover:text-slate-700 rounded-lg lg:hidden"
-          id="burger-btn"
-        >
-          <Menu className="w-5 h-5" />
-        </button>
-        
-        {/* Dynamic Breadcrumbs displayed in topbar if items are passed */}
-        <div className="hidden md:block pt-4">
-          <Breadcrumb items={breadcrumbItems} />
-        </div>
-      </div>
+      {/* Left area logo  */}
+  
 
       {/* Middle Area: Global Search Box (UI Only) */}
       <div className="hidden sm:block flex-1 max-w-xs md:max-w-md mx-6 relative">

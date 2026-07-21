@@ -61,19 +61,13 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
         {/* Upper Sidebar Brand */}
         <div className="flex flex-col flex-1 min-h-0">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
-            <Link to="/home" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#C9A227] flex items-center justify-center text-white font-serif text-lg font-bold shadow-sm">
-                N
-              </div>
-              <div>
-                <span className="font-sans font-bold text-slate-900 text-base tracking-tight block leading-none">
-                  NOOH <span className="text-[#C9A227]">LIVING</span>
-                </span>
-                <span className="text-[10px] font-semibold text-[#C9A227] tracking-widest uppercase block mt-1 leading-none">
-                  Internal Portal
-                </span>
-              </div>
-            </Link>
+           <Link to="/home">
+  <img
+    src="/images/logo.svg"
+    alt="NOOH Logo"
+    className="h-12 w-auto"
+  />
+</Link>
             
             {/* Mobile close button */}
             <button
