@@ -208,8 +208,8 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
           {profileOpen && (
             <div className="absolute right-0 mt-2.5 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-1.5 z-50 overflow-hidden" id="profile-dropdown">
               <div className="px-4 py-2.5 border-b border-gray-100">
-                <p className="text-xs font-bold text-slate-900">Nandini Oberoi</p>
-                <p className="text-[10px] text-slate-500 truncate">nandini@noohliving.com</p>
+                <p className="text-xs font-bold text-slate-900">Admin</p>
+                <p className="text-[10px] text-slate-500 truncate">admin@noohliving.com</p>
               </div>
               
               <Link
