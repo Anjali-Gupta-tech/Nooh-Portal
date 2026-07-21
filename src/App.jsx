@@ -9,18 +9,14 @@ import { ForgotPassword } from "./pages/ForgotPassword";
 import { DashboardHome } from "./pages/DashboardHome";
 import { Projects } from "./pages/Projects";
 import { ProjectDetails } from "./pages/ProjectDetails";
-
 import { Products } from "./pages/Products";
 import { ProductDetails } from "./pages/ProductDetails";
 import { Stock } from "./pages/Stock";
-
-
 import { Gallery } from "./pages/Gallery";
 import { Documents } from "./pages/Documents";
 import { PDFPreview } from "./pages/PDFPreview";
-
-
 import { Settings } from "./pages/Settings";
+import { Franchise } from "./pages/Franchise";
 
 // Simple Router Guard
 function ProtectedRoute({ children }) {
@@ -67,7 +63,7 @@ export default function App() {
             <Route path="stock" element={<Stock />} />
 
             {/* Franchise */}
-            
+            <Route path="franchise" element={<Franchise/>} />
            
 
             {/* Gallery */}
