@@ -116,12 +116,12 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-10 h-10 rounded-full border border-gray-200 overflow-hidden shrink-0">
                 <div className="flex h-full w-full items-center justify-center bg-gray-100 text-xs font-bold text-slate-500">
-                  NS
+                  NO
                 </div>
               </div>
               <div className="min-w-0">
                 <p className="text-xs font-bold text-slate-900 truncate leading-none">
-                  Nandini Oberoi
+                  Admin
                 </p>
                 <p className="text-[10px] text-slate-500 font-medium truncate mt-1 leading-none">
                   Owner / Administrator

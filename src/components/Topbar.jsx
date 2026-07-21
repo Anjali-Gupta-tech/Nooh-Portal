@@ -201,7 +201,7 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
               NO
             </div>
             <span className="hidden sm:inline text-xs font-bold text-slate-700">
-              Nandini
+              Admin
             </span>
           </button>
 
