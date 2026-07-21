@@ -115,15 +115,8 @@ export function Login() {
               )}
             </div>
 
-            {/* Hint Notice */}
-            <div className="p-3 bg-gray-50 border border-gray-100 rounded-lg text-slate-500 text-[11px] font-medium leading-relaxed">
-              <span className="font-bold text-slate-700">Quick Portal Credentials:</span>
-              <br />
-              Email: <code className="font-mono text-slate-800 bg-gray-100 px-1 rounded">admin@noohliving.com</code>
-              <br />
-              Password: <code className="font-mono text-slate-800 bg-gray-100 px-1 rounded">password</code>
-            </div>
-
+            
+         
             {/* Submit Button */}
             <div>
               <button
