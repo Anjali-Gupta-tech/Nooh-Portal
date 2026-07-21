@@ -9,19 +9,17 @@ import { ForgotPassword } from "./pages/ForgotPassword";
 import { DashboardHome } from "./pages/DashboardHome";
 import { Projects } from "./pages/Projects";
 import { ProjectDetails } from "./pages/ProjectDetails";
-import { Clients } from "./pages/Clients";
+
 import { Products } from "./pages/Products";
 import { ProductDetails } from "./pages/ProductDetails";
 import { Stock } from "./pages/Stock";
-import { Franchise } from "./pages/Franchise";
-import { FranchiseDetails } from "./pages/FranchiseDetails";
+
+
 import { Gallery } from "./pages/Gallery";
 import { Documents } from "./pages/Documents";
 import { PDFPreview } from "./pages/PDFPreview";
-import { Vendors } from "./pages/Vendors";
-import { VendorDetails } from "./pages/VendorDetails";
-import { Employees } from "./pages/Employees";
-import { EmployeeProfile } from "./pages/EmployeeProfile";
+
+
 import { Settings } from "./pages/Settings";
 
 // Simple Router Guard
@@ -59,7 +57,7 @@ export default function App() {
             <Route path="projects/:id" element={<ProjectDetails />} />
 
             {/* Clients */}
-            <Route path="clients" element={<Clients />} />
+         
 
             {/* Products */}
             <Route path="products" element={<Products />} />
@@ -69,8 +67,8 @@ export default function App() {
             <Route path="stock" element={<Stock />} />
 
             {/* Franchise */}
-            <Route path="franchise" element={<Franchise />} />
-            <Route path="franchise/:id" element={<FranchiseDetails />} />
+            
+           
 
             {/* Gallery */}
             <Route path="gallery" element={<Gallery />} />
@@ -80,12 +78,10 @@ export default function App() {
             <Route path="documents/preview/:id" element={<PDFPreview />} />
 
             {/* Vendors */}
-            <Route path="vendors" element={<Vendors />} />
-            <Route path="vendors/:id" element={<VendorDetails />} />
+            
 
             {/* Employees */}
-            <Route path="employees" element={<Employees />} />
-            <Route path="employees/:id" element={<EmployeeProfile />} />
+         
 
             {/* Settings */}
             <Route path="settings" element={<Settings />} />

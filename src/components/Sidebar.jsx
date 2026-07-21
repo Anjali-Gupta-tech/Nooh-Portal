@@ -21,16 +21,15 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
   const currentPath = location.pathname;
 
   const menuItems = [
-    { label: "Dashboard HQ", path: "/home", icon: LayoutDashboard },
+    { label: "Dashboard ", path: "/home", icon: LayoutDashboard },
     { label: "Projects", path: "/projects", icon: Briefcase },
     { label: "Clients", path: "/clients", icon: Users },
     { label: "Products Catalog", path: "/products", icon: ShoppingBag },
-    { label: "Stock & Inventory", path: "/stock", icon: Package },
-    { label: "Franchise Network", path: "/franchise", icon: MapPin },
-    { label: "Media Gallery", path: "/gallery", icon: Image },
-    { label: "Company Documents", path: "/documents", icon: FolderOpen },
-    { label: "Vendors & Sourcing", path: "/vendors", icon: Truck },
-    { label: "Employees", path: "/employees", icon: UserCheck },
+   { label: "Company Documents", path: "/documents", icon: FolderOpen },
+     { label: "Media Gallery", path: "/gallery", icon: Image },
+     { label: "Franchise Network", path: "/franchise", icon: MapPin },
+  
+     { label: "Stock & Inventory", path: "/stock", icon: Package },
     { label: "Settings", path: "/settings", icon: Settings }
   ];
 
