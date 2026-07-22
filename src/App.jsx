@@ -17,7 +17,7 @@ import { Documents } from "./pages/Documents";
 import { PDFPreview } from "./pages/PDFPreview";
 import { Settings } from "./pages/Settings";
 import { Franchise } from "./pages/Franchise";
-
+import ContactCards from "./pages/Contact";
 // Simple Router Guard
 function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem("nooh_auth") === "true";
@@ -77,6 +77,8 @@ export default function App() {
             
 
             {/* Employees */}
+             {/* Contact */}
+             <Route path="/contact" element={<ContactCards/>}/>
          
 
             {/* Settings */}
