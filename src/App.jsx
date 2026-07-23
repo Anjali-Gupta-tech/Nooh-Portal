@@ -87,7 +87,7 @@ export default function App() {
 
   {/* Fallback */}
   <Route path="*" element={<Navigate to="/login" replace />} />
-</Routes>  pls tell me only one things that jo code diya h usko kiske bad rakhna h 
+</Routes>  
       </Router>
     </ToastProvider>
   );
