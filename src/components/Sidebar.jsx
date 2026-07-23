@@ -20,28 +20,55 @@ import {
 export function Sidebar({ isOpen, onClose, onLogout }) {
   const location = useLocation();
   const currentPath = location.pathname;
+   const role = localStorage.getItem("role");
 
-  const menuItems = [
-    { label: "Dashboard ", path: "/app/home", icon: LayoutDashboard },
-    { label: "Leads ", path: "/leads", icon: LayoutDashboard },
+  const adminMenu = [
+  { label: "Dashboard", path: "/app/home", icon: LayoutDashboard },
+  { label: "Leads", path: "/app/leads", icon: Users },
+  { label: "Projects", path: "/app/projects", icon: Briefcase },
+  { label: "Orders", path: "/app/orders", icon: Package },
+  { label: "Products Catalog", path: "/app/products", icon: ShoppingBag },
+  { label: "Company Documents", path: "/app/documents", icon: FolderOpen },
+  { label: "Training", path: "/app/training", icon: Users },
+  { label: "Attendance", path: "/app/attendance", icon: UserCheck },
+  { label: "Franchise Network", path: "/app/franchise", icon: MapPin },
+  { label: "Stock & Inventory", path: "/app/stock", icon: Package },
+  { label: "Profile", path: "/app/settings", icon: User },
+];
 
-    { label: "Projects", path: "/app/projects", icon: Briefcase },
-    { label: "Orders ", path: "/app/orders", icon: LayoutDashboard },
-    { label: "Products Catalog", path: "/app/products", icon: ShoppingBag },
-    { label: "Company Documents", path: "/app/documents", icon: FolderOpen },
-    { label: "Training", path: "/app/training", icon: Users },
-     { label: "Attendence", path: "/app/attendence", icon: FolderOpen },
-    
-    
-    { label: "Franchise Network", path: "/app/franchise", icon: MapPin },
+const staffMenu = [
+  { label: "Dashboard", path: "/app/home", icon: LayoutDashboard },
+  { label: "Leads", path: "/app/leads", icon: Users },
+  { label: "Projects", path: "/app/projects", icon: Briefcase },
+  { label: "Orders", path: "/app/orders", icon: Package },
+  { label: "Products Catalog", path: "/app/products", icon: ShoppingBag },
+  { label: "Company Documents", path: "/app/documents", icon: FolderOpen },
+  { label: "Training", path: "/app/training", icon: Users },
+  { label: "Attendance", path: "/app/attendance", icon: UserCheck },
+  { label: "Profile", path: "/app/settings", icon: User },
+];
 
-    { label: "Stock & Inventory", path: "/app/stock", icon: Package },
-    { label: "Profile", path: "/app/settings", icon: User },
-  ];
+const franchiseMenu = [
+  { label: "Dashboard", path: "/app/home", icon: LayoutDashboard },
+  { label: "Products Catalog", path: "/app/products", icon: ShoppingBag },
+  { label: "Company Documents", path: "/app/documents", icon: FolderOpen },
+  { label: "Training", path: "/app/training", icon: Users },
+  { label: "Profile", path: "/app/settings", icon: User },
+];
 
+
+let menuItems = [];
+
+if (role === "admin") {
+  menuItems = adminMenu;
+} else if (role === "staff") {
+  menuItems = staffMenu;
+} else if (role === "franchise") {
+  menuItems = franchiseMenu;
+}
   const isActive = (path) => {
-    if (path === "/home") {
-      return currentPath === "/home" || currentPath === "/";
+    if (path === "/app/home") {
+      return currentPath === "/app/home" || currentPath === "/";
     }
     return currentPath.startsWith(path);
   };
@@ -115,28 +142,32 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
         </div>
 
         {/* User Workspace Profile bottom panel */}
-        <div
-          className="p-4 border-t border-gray-100 bg-white shrink-0"
-          id="sidebar-bottom"
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-full border border-gray-200 overflow-hidden shrink-0">
-                <div className="flex h-full w-full items-center justify-center bg-gray-100 text-xs font-bold text-slate-500">
-                  NO
-                </div>
-              </div>
-              <div className="min-w-0">
-                <p className="text-xs font-bold text-slate-900 truncate leading-none">
-                  Admin
-                </p>
-                <p className="text-[10px] text-slate-500 font-medium truncate mt-1 leading-none">
-                  Owner / Administrator
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+     <div
+  className="p-4 border-t border-gray-100 bg-white shrink-0"
+  id="sidebar-bottom"
+>
+  <div className="flex items-center gap-3">
+    <div className="w-10 h-10 rounded-full border border-gray-200 overflow-hidden shrink-0">
+      <div className="flex h-full w-full items-center justify-center bg-gray-100 text-xs font-bold text-slate-500">
+        {role?.charAt(0).toUpperCase()}
+      </div>
+    </div>
+
+    <div className="min-w-0">
+      <p className="text-xs font-bold text-slate-900 truncate leading-none">
+        {role?.charAt(0).toUpperCase() + role?.slice(1)}
+      </p>
+
+      <p className="text-[10px] text-slate-500 font-medium truncate mt-1 leading-none">
+        {role === "admin"
+          ? "Owner / Administrator"
+          : role === "staff"
+          ? "Staff Member"
+          : "Franchise Partner"}
+      </p>
+    </div>
+  </div>
+</div>
       </aside>
     </>
   );

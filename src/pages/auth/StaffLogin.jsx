@@ -7,6 +7,7 @@ export default function StaffLogin() {
       subtitle="Sign in to access your staff account."
       buttonColor="bg-[#C89B3C] hover:bg-[#b3872f]"
       accentColor="#C89B3C"
+        role="staff"
     />
   );
 }

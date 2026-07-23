@@ -7,6 +7,7 @@ export default function AdminLogin() {
       subtitle="Sign in to access the NOOH Admin Portal."
      buttonColor="bg-green-700 hover:bg-green-800"
 accentColor="#15803D"
+  role="admin"
     />
   );
 }

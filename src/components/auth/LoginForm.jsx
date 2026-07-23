@@ -7,19 +7,22 @@ export default function LoginForm({
   subtitle,
   buttonColor = "bg-[#C89B3C] hover:bg-[#b3872f]",
   accentColor = "#C89B3C",
+  role 
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+ const handleLogin = (e) => {
+  e.preventDefault();
+  console.log("ROLE =", role);
+  // Temporary Login
+  localStorage.setItem("nooh_auth", "true");
 
-    // Temporary Authentication
-    localStorage.setItem("nooh_auth", "true");
+  // Save User Role
+  localStorage.setItem("role", role);
 
-    // Redirect to Dashboard
-    navigate("/app/home");
-  };
+  navigate("/app/home");
+};
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
