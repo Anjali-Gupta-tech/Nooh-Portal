@@ -13,7 +13,8 @@ import {
   UserCheck,
   ExternalLink,
   Settings,
-  X
+  X,
+  User
 } from "lucide-react";
 
 export function Sidebar({ isOpen, onClose, onLogout }) {
@@ -21,16 +22,21 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
   const currentPath = location.pathname;
 
   const menuItems = [
-    { label: "Dashboard ", path: "/home", icon: LayoutDashboard },
-    { label: "Projects", path: "/projects", icon: Briefcase },
-    { label: "Clients", path: "/clients", icon: Users },
-    { label: "Products Catalog", path: "/products", icon: ShoppingBag },
-   { label: "Company Documents", path: "/documents", icon: FolderOpen },
-     { label: "Media Gallery", path: "/gallery", icon: Image },
-     { label: "Franchise Network", path: "/franchise", icon: MapPin },
-  
-     { label: "Stock & Inventory", path: "/stock", icon: Package },
-    { label: "Settings", path: "/settings", icon: Settings }
+    { label: "Dashboard ", path: "/app/home", icon: LayoutDashboard },
+    { label: "Leads ", path: "/leads", icon: LayoutDashboard },
+
+    { label: "Projects", path: "/app/projects", icon: Briefcase },
+    { label: "Orders ", path: "/app/orders", icon: LayoutDashboard },
+    { label: "Products Catalog", path: "/app/products", icon: ShoppingBag },
+    { label: "Company Documents", path: "/app/documents", icon: FolderOpen },
+    { label: "Training", path: "/app/training", icon: Users },
+     { label: "Attendence", path: "/app/attendence", icon: FolderOpen },
+    
+    { label: "Media Gallery", path: "/app/gallery", icon: Image },
+    { label: "Franchise Network", path: "/app/franchise", icon: MapPin },
+
+    { label: "Stock & Inventory", path: "/app/stock", icon: Package },
+    { label: "Profile", path: "/app/settings", icon: User },
   ];
 
   const isActive = (path) => {
@@ -61,14 +67,14 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
         {/* Upper Sidebar Brand */}
         <div className="flex flex-col flex-1 min-h-0">
           <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
-           <Link to="/home">
-  <img
-    src="/images/logo.svg"
-    alt="NOOH Logo"
-    className="h-12 w-auto"
-  />
-</Link>
-            
+            <Link to="/home">
+              <img
+                src="/images/logo.svg"
+                alt="NOOH Logo"
+                className="h-12 w-auto"
+              />
+            </Link>
+
             {/* Mobile close button */}
             <button
               onClick={onClose}
@@ -77,13 +83,16 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
               <X className="w-5 h-5" />
             </button>
           </div>
- 
+
           {/* Navigation Links */}
-          <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto" id="sidebar-nav">
+          <nav
+            className="flex-1 px-4 py-6 space-y-1 overflow-y-auto"
+            id="sidebar-nav"
+          >
             {menuItems.map((item) => {
               const active = isActive(item.path);
               const Icon = item.icon;
-              
+
               return (
                 <Link
                   key={item.label}
@@ -95,16 +104,21 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
                       : "text-slate-600 hover:bg-gray-50 hover:text-slate-900"
                   }`}
                 >
-                  <Icon className={`w-4 h-4 shrink-0 ${active ? "text-[#C9A227]" : "text-slate-400 group-hover:text-slate-500"}`} />
+                  <Icon
+                    className={`w-4 h-4 shrink-0 ${active ? "text-[#C9A227]" : "text-slate-400 group-hover:text-slate-500"}`}
+                  />
                   <span className="truncate">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
         </div>
- 
+
         {/* User Workspace Profile bottom panel */}
-        <div className="p-4 border-t border-gray-100 bg-white shrink-0" id="sidebar-bottom">
+        <div
+          className="p-4 border-t border-gray-100 bg-white shrink-0"
+          id="sidebar-bottom"
+        >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-10 h-10 rounded-full border border-gray-200 overflow-hidden shrink-0">
