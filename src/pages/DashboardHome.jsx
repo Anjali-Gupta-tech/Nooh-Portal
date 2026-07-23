@@ -28,11 +28,7 @@ export function DashboardHome() {
       icon: Briefcase,
       to: "/app/projects",
     },
-    {
-      title: "Clients",
-      icon: Users,
-      to: "/app/clients",
-    },
+   
     {
       title: "Products",
       icon: ShoppingBag,
@@ -68,11 +64,13 @@ export function DashboardHome() {
   title: "Quotation",
   icon: Quote,
   to: "/app/quotation",
+},
+ {
+  title: "Attendance",
+  icon: Quote,
+  to: "/app/attendance",
 }
-   
-
-  
-  ];
+ ];
 
   return (
     <div className="space-y-8">
