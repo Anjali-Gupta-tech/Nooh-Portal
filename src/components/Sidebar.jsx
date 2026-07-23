@@ -32,7 +32,7 @@ export function Sidebar({ isOpen, onClose, onLogout }) {
     { label: "Training", path: "/app/training", icon: Users },
      { label: "Attendence", path: "/app/attendence", icon: FolderOpen },
     
-    { label: "Media Gallery", path: "/app/gallery", icon: Image },
+    
     { label: "Franchise Network", path: "/app/franchise", icon: MapPin },
 
     { label: "Stock & Inventory", path: "/app/stock", icon: Package },

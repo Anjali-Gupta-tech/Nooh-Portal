@@ -55,7 +55,7 @@ export function PDFPreview() {
   }
 
   const breadcrumbs = [
-    { label: "Company Documents", path: "/documents" },
+    { label: "Company Documents", path: "/app/documents" },
     { label: file.folderName, path: `/documents` },
     { label: file.name }
   ];

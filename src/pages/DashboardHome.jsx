@@ -10,6 +10,12 @@ import {
   Image,
   Contact,
   Building2,
+   MessageCircle,
+  Bot,
+  FileText,
+  Quote,
+  MessagesSquare,
+
   
 } from "lucide-react";
 
@@ -20,38 +26,51 @@ export function DashboardHome() {
     {
       title: "Projects",
       icon: Briefcase,
-      to: "/projects",
+      to: "/app/projects",
     },
     {
       title: "Clients",
       icon: Users,
-      to: "/clients",
+      to: "/app/clients",
     },
     {
       title: "Products",
       icon: ShoppingBag,
-      to: "/products",
+      to: "/app/products",
     },
     {
       title: "Documents",
       icon: FolderOpen,
-      to: "/documents",
+      to: "/app/documents",
     },
-    {
-      title: "Gallery",
-      icon: Image,
-      to: "/gallery",
-    },
+   
    {
       title: "Contact",
       icon: Contact,
-      to: "/contact",
+      to: "/app/contact",
     },
    {
     title:"Franchise",
     icon:Building2,
-    to:"/franchise"
+    to:"/app/franchise"
    },
+   {
+  title: "WhatsApp",
+  icon: MessageCircle,
+  to: "/app/whatsapp",
+},
+  {
+  title: "ChatGPT",
+  icon: Bot,
+  to: "/app/chatgpt",
+},
+   {
+  title: "Quotation",
+  icon: Quote,
+  to: "/app/quotation",
+}
+   
+
   
   ];
 

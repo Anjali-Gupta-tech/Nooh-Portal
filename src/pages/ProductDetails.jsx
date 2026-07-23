@@ -35,7 +35,7 @@ export function ProductDetails() {
   }
 
   const breadcrumbs = [
-    { label: "Products Catalog", path: "/products" },
+    { label: "Products Catalog", path: "/app/products" },
     { label: product.name }
   ];
 
