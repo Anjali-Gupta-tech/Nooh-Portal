@@ -25,7 +25,8 @@ import Welcome from "./pages/auth/Welcome";
 import StaffLogin from "./pages/auth/StaffLogin";
 import FranchiseLogin from "./pages/auth/FranchiseLogin";
 import AdminLogin from "./pages/auth/AdminLogin";
-import ChatGPT from "./pages/ChatGPT";
+import ChatGPT from "./pages/Chatgpt";
+
 // Simple Router Guard
 function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem("nooh_auth") === "true";
@@ -82,8 +83,8 @@ export default function App() {
     {/* Contact */}
     <Route path="contact" element={<ContactCards />} />
       {/* Chatgpt */}
-      <Route path="chatgpt" element={<ChatGPT/>} />
-      
+    <Route path="chatgpt" element={<ChatGPT/>}/>
+
 
     {/* Settings */}
     <Route path="settings" element={<Settings />} />
