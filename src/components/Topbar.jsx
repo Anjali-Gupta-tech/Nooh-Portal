@@ -1,10 +1,41 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, Bell, Search, LogOut, Settings, User, CheckCircle2, AlertTriangle, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  Bell,
+  Search,
+  LogOut,
+  Settings,
+  User,
+  CheckCircle2,
+  AlertTriangle,
+  ArrowRight,
+} from "lucide-react";
 import { Breadcrumb } from "./Breadcrumb";
 
 export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
   const navigate = useNavigate();
+  {
+    /* changes in code  */
+  }
+  const role = localStorage.getItem("role") || "staff";
+
+  const roleName =
+    role === "admin"
+      ? "Administrator"
+      : role === "staff"
+        ? "Staff"
+        : "Franchise";
+
+  const roleEmail =
+    role === "admin"
+      ? "admin@noohliving.com"
+      : role === "staff"
+        ? "staff@noohliving.com"
+        : "franchise@noohliving.com";
+
+  const initials = role === "admin" ? "AD" : role === "staff" ? "ST" : "FR";
+
   const [profileOpen, setProfileOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
@@ -21,7 +52,7 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
       desc: "3D Charcoal Wall Panel is down to 18 pieces.",
       time: "10m ago",
       type: "warning",
-      link: "/stock"
+      link: "/stock",
     },
     {
       id: 2,
@@ -29,7 +60,7 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
       desc: "Amit Verma uploaded the ceiling gloss check report.",
       time: "2h ago",
       type: "info",
-      link: "/projects/proj-101"
+      link: "/projects/proj-101",
     },
     {
       id: 3,
@@ -37,8 +68,8 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
       desc: "Chandigarh branch documentation is under review.",
       time: "1d ago",
       type: "success",
-      link: "/franchise"
-    }
+      link: "/franchise",
+    },
   ];
 
   // Close dropdowns on outside click
@@ -56,10 +87,11 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
   }, []);
 
   return (
-    <header className="h-20 bg-white border-b border-gray-200 px-8 flex items-center justify-between shrink-0 sticky top-0 z-30" id="topbar-root">
-      
+    <header
+      className="h-20 bg-white border-b border-gray-200 px-8 flex items-center justify-between shrink-0 sticky top-0 z-30"
+      id="topbar-root"
+    >
       {/* Left area logo  */}
-  
 
       {/* Middle Area: Global Search Box (UI Only) */}
       <div className="hidden sm:block flex-1 max-w-xs md:max-w-md mx-6 relative">
@@ -91,20 +123,25 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
                   onClick={() => navigate(`/projects`)}
                   className="p-2 hover:bg-slate-50 rounded-lg cursor-pointer flex items-center justify-between"
                 >
-                  <span className="font-semibold text-slate-700">"{searchVal}" in Projects</span>
+                  <span className="font-semibold text-slate-700">
+                    "{searchVal}" in Projects
+                  </span>
                   <ArrowRight className="w-3 h-3 text-slate-400" />
                 </div>
                 <div
                   onClick={() => navigate(`/products`)}
                   className="p-2 hover:bg-slate-50 rounded-lg cursor-pointer flex items-center justify-between"
                 >
-                  <span className="font-semibold text-slate-700">"{searchVal}" in Catalog Products</span>
+                  <span className="font-semibold text-slate-700">
+                    "{searchVal}" in Catalog Products
+                  </span>
                   <ArrowRight className="w-3 h-3 text-slate-400" />
                 </div>
               </div>
             ) : (
               <div className="p-3 text-center text-slate-400">
-                Type to query stretch ceilings, client dossiers, or stock lists...
+                Type to query stretch ceilings, client dossiers, or stock
+                lists...
               </div>
             )}
           </div>
@@ -113,7 +150,6 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
 
       {/* Right Area: Actions, Notification, User Profile */}
       <div className="flex items-center gap-3.5">
-        
         {/* Notification Icon & Dropdown */}
         <div className="relative" ref={notifRef}>
           <button
@@ -128,10 +164,17 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
 
           {/* Notifications Dropdown Panel */}
           {notificationsOpen && (
-            <div className="absolute right-0 mt-2.5 w-80 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50 overflow-hidden" id="notif-dropdown">
+            <div
+              className="absolute right-0 mt-2.5 w-80 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50 overflow-hidden"
+              id="notif-dropdown"
+            >
               <div className="px-4 py-2 border-b border-gray-100 flex items-center justify-between">
-                <h4 className="font-bold text-slate-900 text-xs">Office Stream</h4>
-                <span className="text-[10px] text-green-600 font-semibold px-1.5 py-0.5 bg-green-50 rounded">3 unread</span>
+                <h4 className="font-bold text-slate-900 text-xs">
+                  Office Stream
+                </h4>
+                <span className="text-[10px] text-green-600 font-semibold px-1.5 py-0.5 bg-green-50 rounded">
+                  3 unread
+                </span>
               </div>
               <div className="divide-y divide-gray-100 max-h-72 overflow-y-auto">
                 {notificationItems.map((item) => (
@@ -185,20 +228,26 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
             id="profile-dropdown-btn"
           >
             <div className="w-7 h-7 rounded-lg bg-[#C9A227] text-white flex items-center justify-center font-bold text-xs">
-              NO
+              {initials}
             </div>
+
             <span className="hidden sm:inline text-xs font-bold text-slate-700">
-              Admin
+              {roleName}
             </span>
           </button>
 
           {profileOpen && (
-            <div className="absolute right-0 mt-2.5 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-1.5 z-50 overflow-hidden" id="profile-dropdown">
+            <div
+              className="absolute right-0 mt-2.5 w-48 bg-white rounded-xl shadow-lg border border-gray-200 py-1.5 z-50 overflow-hidden"
+              id="profile-dropdown"
+            >
               <div className="px-4 py-2.5 border-b border-gray-100">
-                <p className="text-xs font-bold text-slate-900">Admin</p>
-                <p className="text-[10px] text-slate-500 truncate">admin@noohliving.com</p>
+                <p className="text-xs font-bold text-slate-900">{roleName}</p>
+                <p className="text-[10px] text-slate-500 truncate">
+                  {roleEmail}
+                </p>
               </div>
-              
+
               <Link
                 to="/settings"
                 onClick={() => setProfileOpen(false)}
@@ -207,7 +256,7 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
                 <Settings className="w-3.5 h-3.5" />
                 <span>Office Settings</span>
               </Link>
-              
+
               <button
                 onClick={() => {
                   setProfileOpen(false);
@@ -221,7 +270,6 @@ export function Topbar({ onMenuToggle, breadcrumbItems = [], onLogout }) {
             </div>
           )}
         </div>
-
       </div>
     </header>
   );
